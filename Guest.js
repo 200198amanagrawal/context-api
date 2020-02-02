@@ -6,7 +6,15 @@ export default class Guest extends Component {
             <div>
                 Guest Component
                 <MyContext.Consumer>
-                    {data=><h4>{data}</h4>}
+                    {({data,handleClick})=>(
+                        <div>
+                            <h4>
+                                Name:{data.name} Value:{data.value}
+                            </h4>
+                            <button onClick={handleClick}>Change</button>
+                        </div>
+
+                    )}
                 </MyContext.Consumer>
             </div>
         )
